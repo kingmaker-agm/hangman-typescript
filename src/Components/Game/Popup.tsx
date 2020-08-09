@@ -1,12 +1,19 @@
 import React from "react";
 
-const Popup = () => {
+interface props {
+  title: String;
+  message: String;
+  buttonText: String;
+  onButtonClick: () => void;
+}
+
+const Popup = ({ title, message, buttonText, onButtonClick }: props) => {
   return (
-    <div className="popup-container" id="popup-container">
+    <div className="popup-container">
       <div className="popup">
-        <h2>{/* Popup Heading */}</h2>
-        <h3>{/* Message */}</h3>
-        <button>Play Again</button>
+        <h2>{title}</h2>
+        <h3>{message}</h3>
+        <button onClick={onButtonClick}>{buttonText}</button>
       </div>
     </div>
   );

@@ -1,9 +1,14 @@
 import React from "react";
 
-const SnackBar = () => {
+interface props {
+  message: String;
+  show?: boolean;
+}
+
+const SnackBar = ({ message, show }: props) => {
   return (
-    <div className="notification-container">
-      <p>Message Here</p>
+    <div className={`notification-container ${show ? "show" : ""}`}>
+      <p>{message}</p>
     </div>
   );
 };
